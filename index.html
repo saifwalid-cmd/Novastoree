@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Store | Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#"><span class="logo-mark">N</span> nova<span>store</span></a>
+    <nav><a class="active" href="#products">Shop</a><a href="#categories">Categories</a><a href="#about">About</a></nav>
+    <button class="cart-button" id="cartButton" aria-label="Open cart">Bag <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">THE EVERYDAY EDIT</p>
+        <h1>Find your next<br><span>favorite thing.</span></h1>
+        <p class="hero-text">Thoughtfully picked essentials for your everyday life. Discover something good.</p>
+        <a class="primary-button" href="#products">Explore products <span>↗</span></a>
+      </div>
+      <div class="hero-art">
+        <div class="hero-circle"></div>
+        <img src="https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" alt="Featured beauty product">
+        <div class="floating-note"><span>✦</span><div><strong>Good finds.</strong><small>Better everyday.</small></div></div>
+        <div class="hero-tag">CURATED FOR YOU</div>
+      </div>
+    </section>
+
+    <section class="shop-section" id="products">
+      <div class="section-heading">
+        <div><p class="eyebrow">OUR COLLECTION</p><h2>Shop the products</h2></div>
+        <p class="result-count" id="resultCount">Loading products...</p>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search products..." autocomplete="off"><kbd>↵</kbd></label>
+        <div class="filters">
+          <select id="categorySelect" aria-label="Filter by category"><option value="">All categories</option></select>
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="rating">Top rated</option>
+            <option value="title">Name: A–Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="status" class="status">Loading the collection…</div>
+      <div id="productGrid" class="product-grid"></div>
+      <div class="load-more-wrap"><button id="loadMore" class="secondary-button" hidden>Load more products <span>↓</span></button></div>
+    </section>
+
+    <section class="bottom-banner" id="categories">
+      <div><p class="eyebrow">A LITTLE SOMETHING FOR YOU</p><h2>Good things are<br>closer than you think.</h2></div>
+      <a href="#products" class="light-button">Browse collection ↗</a>
+      <span class="banner-decoration">✳</span>
+    </section>
+  </main>
+
+  <footer id="about"><a class="logo" href="#"><span class="logo-mark">N</span> nova<span>store</span></a><p>Demo storefront powered by DummyJSON.</p><span>© 2026 Nova Store</span></footer>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="modalBackdrop">
+    <section class="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="modal-heading"><div><p class="eyebrow">YOUR PICKS</p><h2 id="cartTitle">Shopping bag</h2></div><button id="closeCart" class="icon-button" aria-label="Close cart">✕</button></div>
+      <div id="cartItems" class="cart-items"><p class="empty-cart">Your bag is empty for now.</p></div>
+      <div class="cart-total"><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div>
+      <button id="checkoutButton" class="primary-button checkout-button">Continue to checkout <span>↗</span></button>
+      <p class="demo-note">Demo only — no real orders or payments.</p>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
